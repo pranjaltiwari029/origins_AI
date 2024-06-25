@@ -1,7 +1,7 @@
 import sqlite3
 
 
-DB_PATH = 'image_db.db'
+DB_PATH = 'images_db.db'
 
 def init_db():
     
@@ -17,19 +17,14 @@ def add_image_description(image_hash, path, description):
     
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
-        cursor.execute('''
-            INSERT INTO images (image_hash, path, description)
-            VALUES (?, ?, ?)
-        ''', (image_hash, path, description))
+        cursor.execute( (image_hash, path, description))
         conn.commit()  
 
 def get_image_description(image_hash):
     
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
-        cursor.execute('''
-            SELECT description FROM images WHERE image_hash = ?
-        ''', (image_hash,))
+        cursor.execute( (image_hash))
         result = cursor.fetchone()  
         return result[0] if result else None  
 
