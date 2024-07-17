@@ -33,7 +33,7 @@ This project provides two APIs using Python and Flask. The first API handles ima
 ### Running the Application
 1. Initialize the database:
     ```bash
-    python main.py
+    python app.py
     ```
 
 2. The Flask application will start running at `http://127.0.0.1:5000`.
@@ -41,7 +41,7 @@ This project provides two APIs using Python and Flask. The first API handles ima
 ## API Endpoints
 
 ### 1. Upload Image and Generate Text Description
-- **URL:** `/upload`
+- **URL:** `/uploads`
 - **Method:** `POST`
 - **Request:**
     - Form-data: `image` (file)

@@ -8,7 +8,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = 'image_uploads/'
+app.config['UPLOAD_FOLDER'] = 'uploads/'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 image_to_text = pipeline("image-to-text", model="Salesforce/blip-image-captioning-large")
